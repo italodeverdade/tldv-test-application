@@ -1,5 +1,5 @@
-import Button from '@webapp/components/Button';
 import React from 'react';
+import Button from '@webapp/components/Button';
 
 function App() {
   return (
