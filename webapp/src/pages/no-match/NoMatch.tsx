@@ -12,8 +12,8 @@ const NoMatch: React.FC = () => {
                 options={{
                     animationData: animation
                 }} />
-            <h2>You're clean</h2>
-            <span>Please, select some video in the list to watch or edit infos.</span>
+            <h2>Feeling lost?</h2>
+            <span>Please, select some videos in the list to watch or edit Infos.</span>
         </div>
     )
 };
