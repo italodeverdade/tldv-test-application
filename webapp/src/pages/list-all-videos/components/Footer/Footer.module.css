@@ -1,0 +1,14 @@
+.cta {
+    display: flex;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: #FFF;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.cta:hover {
+    background-color: #0068d6;
+}

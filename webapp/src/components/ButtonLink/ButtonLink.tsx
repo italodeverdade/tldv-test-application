@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import styles from './ButtonLink.module.css'
 import {ButtonLinkProps} from './ButtonLink.types';
 
-const Button : React.FC<ButtonLinkProps> = ({label, component, ...rest}) => {
+const ButtonLink : React.FC<ButtonLinkProps> = ({label, ...rest}) => {
     return (
-        <Link  {...rest} data-testid="ButtonLink::Link" className={styles.button}>
+        <Link {...rest} data-testid="ButtonLink::Link" className={styles.button}>
             {label && <span data-testid="ButtonLink::Label">{label}</span>}
         </Link>
     )
 }
 
-export default Button;
+export default ButtonLink;

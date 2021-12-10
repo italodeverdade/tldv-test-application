@@ -1,36 +1,28 @@
-import instance, {getAllVideos, getVideoById, updateOneVideo} from './index';
 import MockAdapter from 'axios-mock-adapter';
-
-const singleVideoData = {
-    title: "Testing video response",
-    slug: "testing-video-response",
-    id: "123456",
-    isPublic: true,
-    url: "https://tldv.io/sample.mp4"
-};
+import instance, {getAllVideos, getVideoById, updateOneVideo} from './index';
+import * as mocks from '@webapp/mocks/videos'
 
 describe("API", () => {
     const mock = new MockAdapter(instance);
 
     it('returns data when getAllVideos is called', done => {
-        const data: Video[] = [singleVideoData];
-        mock.onGet('/videos').reply(200, data);
+        mock.onGet('/videos').reply(200, mocks.videos);
         getAllVideos().then(response => {
-            expect(response).toEqual(data);
+            expect(response).toEqual(mocks.videos);
             done();
         });
     });
 
     it('returns data when getVideo is called', done => {
-        mock.onGet(`/videos/${singleVideoData.id}`).reply(200, singleVideoData);
-        getVideoById(singleVideoData.id).then(response => {
-            expect(response).toEqual(singleVideoData);
+        mock.onGet(`/videos/${mocks.video.id}`).reply(200, mocks.video);
+        getVideoById(mocks.video.id).then(response => {
+            expect(response).toEqual(mocks.video);
             done();
         });
     });
 
     it('returns updated user when updateOneVideo is called', done => {
-        let videoToUpdate = singleVideoData;
+        let videoToUpdate = mocks.video;
         videoToUpdate.title = "new title";
         mock.onPut(`/videos/${videoToUpdate.id}`).reply(200, videoToUpdate);
         updateOneVideo(videoToUpdate).then(response => {

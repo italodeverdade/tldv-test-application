@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { getAllVideos } from "@webapp/api";
-import styles from "./ListAllVideos.module.css";
-import VideoItem from "@webapp/components/VideoItem";
+import Header from '@webapp/components/Header';
+import List from '@webapp/components/List';
 import Loading from "@webapp/components/Loading";
-import { Link } from "react-router-dom";
+import styles from "./ListAllVideos.module.css";
+import { Footer } from "./components";
+
+const ErrorMessage: React.FC<{ message: string }> = ({ message }) => (
+  <div data-testid="List::Error" className={styles.centered}>
+    <span>{message}</span>
+  </div>
+);
+
+const LoadingContainer: React.FC = () => (
+  <div data-testid="Loading::Container" className={styles.centered}>
+    <Loading />
+  </div>
+);
 
 const ListAllVideos: React.FC = () => {
   const [isLoading, setIsLoading] = useState<Boolean>(true);
@@ -25,32 +38,15 @@ const ListAllVideos: React.FC = () => {
 
   return (
     <div data-testid="List::Videos" className={styles.container}>
-      {isLoading && (
-        <div className={styles.centered}>
-          <Loading />
-        </div>
-      )}
+      {isLoading && <LoadingContainer />}
       {!isLoading && videos.length > 0 && (
         <>
-          <div className={styles.header}>
-            <Link to="/" id="tldv" />
-            <span className={styles.tag}>player</span>
-          </div>
-          <div className={styles.list}>
-            {videos.map((video) => {
-              return <VideoItem {...video} key={video.id} />;
-            })}
-          </div>
-          <a href="https://tldv.io/" rel="noreferrer" className={styles.cta} target="_blank">
-            Catch up on meetings in minutes
-          </a>
+          <Header />
+          <List {...{ videos }} />
+          <Footer />
         </>
       )}
-      {!isLoading && error && (
-        <div className={styles.centered}>
-          <span>{error.message}</span>
-        </div>
-      )}
+      {!isLoading && error && <ErrorMessage message={error.message} />}
     </div>
   );
 };
