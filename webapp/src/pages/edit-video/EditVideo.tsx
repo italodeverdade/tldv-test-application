@@ -10,6 +10,7 @@ const EditVideo: React.FC = (props) => {
   const params = useParams();
   const [error, setError] = useState<Error>();
   const [isLoading, setIsLoading] = useState<Boolean>(true);
+  const [isSending, setIsSending] = useState<boolean>(false);
   const [receivedVideo, setVideo] = useState<Video>();
 
   const [title, setTitle] = useState<string>("");
@@ -54,6 +55,7 @@ const EditVideo: React.FC = (props) => {
 
   const onSubmitForm = (event?: FormEvent) => {
     event?.preventDefault();
+    setIsSending(true);
     if (receivedVideo?.id) {
       updateOneVideo({
         title,
@@ -70,6 +72,7 @@ const EditVideo: React.FC = (props) => {
           window.history.go(0);
         })
         .catch((err) => {
+          setIsSending(false);
           alert(err.message);
         });
     }
@@ -108,7 +111,7 @@ const EditVideo: React.FC = (props) => {
                   </select>
                 </div>
                 <div className={styles.divider} />
-                <Button onClick={onSubmitForm} label="Save changes" />
+                <Button loading={isSending} onClick={onSubmitForm} label="Save changes" />
               </form>
             </div>
           </div>
