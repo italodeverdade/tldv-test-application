@@ -4,9 +4,9 @@ import styles from './Input.module.css';
 
 const Input: React.FC<InputProps> = ({label, ...rest}) => {
     return (
-        <div className={styles.container}>
-            {label && <span>{label}</span>}
-            <input {...rest} />
+        <div data-testid="Input::Container" className={styles.container}>
+            {label && <span data-testid="Input::Label">{label}</span>}
+            <input data-testid="Input::Input" {...rest} />
         </div>
     )
 }

@@ -5,8 +5,8 @@ import {ButtonLinkProps} from './ButtonLink.types';
 
 const Button : React.FC<ButtonLinkProps> = ({label, component, ...rest}) => {
     return (
-        <Link  {...rest} className={styles.button}>
-            {label && <span data-testid="Button::Label">{label}</span>}
+        <Link  {...rest} data-testid="ButtonLink::Link" className={styles.button}>
+            {label && <span data-testid="ButtonLink::Label">{label}</span>}
         </Link>
     )
 }

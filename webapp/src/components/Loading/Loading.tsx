@@ -7,13 +7,14 @@ const Loading: React.FC<LoadingProps> = ({ label }) => {
   return (
     <>
       <Lottie
+        data-testid="Loading::Animation"
         width={128}
         height={128}
         options={{
           animationData: animation,
         }}
       />
-      {label && <span>{label}</span>}
+      {label && <span data-testid="Loading::Label">{label}</span>}
     </>
   );
 };
