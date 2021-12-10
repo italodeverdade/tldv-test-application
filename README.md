@@ -21,6 +21,9 @@ Probably if you is seeing this is because you are evaluting my code (and I reall
   - [First time running](#first-time-running)
     - [API:](#api)
     - [WebApp:](#webapp)
+  - [.env files](#env-files)
+    - [API](#api-1)
+    - [WebApp](#webapp-1)
 
 
 ## Project structure
@@ -40,6 +43,28 @@ If u want to run this repository in your local machine you need to setup first s
 #### API:
  - `yarn strapi`: run in CI mode;
  - `yarn develop`: run in development mode;
- - `yarn production`: run PM2 process
+ - `yarn production`: run PM2 process;
 
 #### WebApp:
+ - `yarn start`: debug using development mode;
+ - `yarn start:staging`: debug using staging mode;
+ - `yarn start:production`: debug using production mode; 
+ - `yarn build`: build using development mode;
+ - `yarn build:staging`: build using staging mode;
+ - `yarn build:production`: build using production mode; 
+ - `yarn test`: run unit tests (Jest);
+
+### .env files
+Both `webapp` and `api` projects need .env files to run differents modes in your local machine or in production servers. You can check below what you need to set in each one of this .env files.
+
+#### API
+`.env.development` or `.env.production`
+
+    HOST=0.0.0.0 # Your database host IP
+    PORT=1337 # Default application port
+    DATABASE_NAME=tldv-database # MongoDB Database name
+
+#### WebApp
+`.env.development.local`, `.env.staging.local` or `.env.production.local`
+
+    REACT_APP_API_URL=https://api.thisismytldvtest.com # The env mode API URL
