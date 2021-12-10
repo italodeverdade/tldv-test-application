@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container h2,
+.container span {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.icon {
+    width: 96px;
+    height: 96px;
+    background-color: var(--primary-color);
+    border-radius: 48px;
+    margin-bottom: 16px;
+}

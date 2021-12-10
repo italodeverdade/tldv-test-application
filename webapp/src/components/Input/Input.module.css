@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.container span {
+    font-weight: bold;
+}
+
+.container input {
+    padding: 16px;
+    background-color: #FFF;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--divider-color);
+}
+
+.container input:focus {
+    border-color: var(--primary-color);
+}

@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-width: 300px;
+    border-right: 1px solid var(--divider-color);
+}
+
+.centered {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    margin: 16px;
+    display: flex;
+    margin-bottom: 0;
+    align-items: center;
+    flex-direction: row;
+}
+
+.header a {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    background-image: url('./assets/tldv-logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.tag {
+    background-color: #000;
+    color: #FFF;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 8px;
+    margin-left: 8px;
+}
+
+.list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.cta {
+    display: flex;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: #FFF;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.cta:hover {
+    background-color: #0068d6;
+}

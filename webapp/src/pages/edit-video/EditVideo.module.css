@@ -1,0 +1,54 @@
+.info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.toolbar {
+    align-items: flex-start;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--divider-color);
+    padding: 16px;
+}
+
+.divider {
+    height: 1px;
+    background: var(--divider-color);
+    margin: 24px 0;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: #FFF;
+    padding: 32px;
+}
+
+.formContainer h1 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+.centered {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFF;
+}

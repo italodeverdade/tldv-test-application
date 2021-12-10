@@ -1,0 +1,82 @@
+.item {
+    display: flex;
+    flex: 1;
+    background: #FFF;
+    margin: 16px;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    transition: .3s all;
+    border: 1px solid var(--divider-color);
+    align-items: center;
+}
+
+.item>div {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.chevron {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: var(--divider-color);
+    -webkit-mask-image: url(./assets/chevron-right.svg);
+    mask-image: url(./assets/chevron-right.svg);
+}
+
+.active {
+    background-color: var(--primary-color);
+    color: #FFF;
+}
+
+.active .chevron {
+    background-color: #FFF;
+}
+
+.title {
+    display: block;
+    font-weight: 700;
+}
+
+.date {
+    color: rgba(0, 0, 0, .54)
+}
+
+.active .date {
+    color: rgba(255, 255, 255, .40);
+}
+
+.item:hover {
+    box-shadow: 0px 4px 12px var(--divider-color);
+    transform: scale(1.05);
+}
+
+.tag {
+    display: inline-block!important;
+    color: #FFF;
+    font-size: 12px;
+    padding: 4px 16px;
+    border-radius: 16px;
+    font-weight: 600;
+    margin-top: 6px;
+    background-color: #000;
+}
+
+.public {
+    background-color: rgba(18, 175, 31, 0.64);
+}
+
+.private {
+    background-color: rgba(255, 136, 0, 0.64);
+}
+
+.active .tag {
+    background-color: #FFF;
+    color: var(--primary-color);
+}
